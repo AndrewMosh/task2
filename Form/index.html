@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка формы</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form">
+        <form class="form__content" id="validationForm">
+            <label for="name" class="form__label">ФИО</label>
+            <input type="text" id="name" name="name" class="form__input" required aria-describedby="nameFeedback">
+            <div id="nameFeedback" class="form__feedback"></div>
+
+            <label for="password" class="form__label">Пароль</label>
+            <input type="password" id="password" name="password" class="form__input" required aria-describedby="passwordFeedback">
+            <div id="passwordFeedback" class="form__feedback"></div>
+
+            <button type="submit" class="form__button">Отправить</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

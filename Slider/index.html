@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Image Slider</title>
+	<link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+	<section class="slider" aria-label="Image Slider">
+		<button class="slider__btn slider__btn--prev" aria-label="Previous Slide" disabled>←</button>
+		
+		<div class="slider__track" role="list">
+			<!-- Slider images will be injected here dynamically -->
+		</div>
+		
+		<button class="slider__btn slider__btn--next" aria-label="Next Slide">→</button>
+	</section>
+	
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+	<script type="module" src="js/api.js" defer></script>
+	<script type="module" src="js/slider.js" defer></script>
+</body>
+
+</html>
