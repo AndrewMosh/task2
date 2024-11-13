@@ -14,9 +14,16 @@ async function initSlider() {
     const imgElement = document.createElement('img');
     imgElement.classList.add('slider__image', 'slider__image--placeholder');
     imgElement.src = card.url;
-    imgElement.alt = 'ошибка загрузки';
-	imgElement.loading = 'lazy';
-    
+    imgElement.alt = 'image';
+    imgElement.loading = 'lazy';
+
+    // Если возникнет ошибка при загрузке изображения, заменяем его на placeholder
+    imgElement.addEventListener('error', () => {
+      const placeholderDiv = document.createElement('div');
+      placeholderDiv.classList.add('slider__image--placeholder');
+      cardContainer.replaceChild(placeholderDiv, imgElement);
+    });
+
     const txtElement = document.createElement('p');
     txtElement.classList.add('slider__text');
     txtElement.textContent = card.title;
@@ -29,17 +36,17 @@ async function initSlider() {
     cards.forEach(card => track.appendChild(createCard(card)));
   }
 
-  function updateButtons(offset) {
+  function updateButtons() {
+    const offset = window.innerWidth;
     prevBtn.disabled = currentIndex === 0;
-    nextBtn.disabled = currentIndex === (offset<=443? cards.length - 1 : cards.length - 2);
+    nextBtn.disabled = currentIndex === (offset <= 443 ? cards.length - 1 : cards.length - 2);
   }
 
   function goToSlide(index) {
     const imageWidth = track.children[0].offsetWidth + 20;
-	const offset = window.innerWidth;
     track.scrollTo({ left: index * imageWidth, behavior: 'smooth' });
     currentIndex = index;
-    updateButtons(offset);
+    updateButtons();
   }
 
   function handleSwipe() {

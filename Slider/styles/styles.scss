@@ -52,20 +52,10 @@ body {
 			height: 150px;
 			background-color: #ccc;
 			border-radius: 8px;
-			animation: loader 1.5s infinite ease-in-out;
 
 			@media (max-width: 564px) {
 				width: 100px;
 				height: 100px;
-			}
-
-			@keyframes loader {
-				50% {
-					background-color: #dddbdb;
-				}
-				100% {
-					background-color: #ccc;
-				}
 			}
 		}
     }
@@ -86,6 +76,14 @@ body {
         padding: 12px 15px;
         font-size: 1.2rem;
         transition: 0.3s;
+
+		&:hover {
+			background-color: #454fa7d8;
+		}
+
+		&:active {
+			background-color: #2b3279;
+		}
 
         &:disabled {
             cursor: not-allowed;

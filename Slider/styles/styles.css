@@ -49,20 +49,11 @@ body {
   height: 150px;
   background-color: #ccc;
   border-radius: 8px;
-  animation: loader 1.5s infinite ease-in-out;
 }
 @media (max-width: 564px) {
   .slider__image--placeholder {
     width: 100px;
     height: 100px;
-  }
-}
-@keyframes loader {
-  50% {
-    background-color: #dddbdb;
-  }
-  100% {
-    background-color: #ccc;
   }
 }
 .slider__text {
@@ -80,6 +71,12 @@ body {
   padding: 12px 15px;
   font-size: 1.2rem;
   transition: 0.3s;
+}
+.slider__btn:hover {
+  background-color: rgba(69, 79, 167, 0.8470588235);
+}
+.slider__btn:active {
+  background-color: #2b3279;
 }
 .slider__btn:disabled {
   cursor: not-allowed;
