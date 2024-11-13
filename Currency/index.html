@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Converter Currency</title>
+	<link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+	<section class="currency">
+		  <h1 class="currency__title">Exchange Rates in Internet Bank</h1>
+		  <h2 class="currency__subtitle">Currency:</h2>
+		  <div id="loader" class="currency__loader">Loading...</div>
+		<ul id="currency-list" class="currency__list">
+		</ul>
+		<div id="error" class="currency__error"></div>
+	  </section>
+	  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	  <script type="module" src="./js/api.js"></script>
+	  <script type="module" src="./js/currency.js"></script>
+</body>
+</html>
