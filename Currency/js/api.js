@@ -1,5 +1,8 @@
-const apiUrl = "https://api.exchangeratesapi.io/v1/latest";
-const apiKey = "b966dd3434ab1fcf337966d6cda1c0d3";
+const apiKey = "475fc60495e19e47387ee324";
+const baseCurrency = "RUB";
+
+const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${baseCurrency}`;
+
 
 const currencies = ["USD", "EUR", "GBP", "JPY", "CNY", "CHF"];
 
@@ -11,12 +14,9 @@ export async function fetchCurrencyRates() {
     loader.style.display = "block";
     currencyList.style.display = "none";
 
-    // в бесплатной версии API базовая валюта  только EUR и кол-во запросов в месяц ограничено
     try {
-        const response = await axios.get(apiUrl, {
-            params: { access_key: apiKey },
-        });
-        const rates = response.data.rates;
+        const response = await axios.get(apiUrl);
+        const rates = response.data.conversion_rates;
         return currencies.map((code) => ({
             code,
             rate: rates[code],
