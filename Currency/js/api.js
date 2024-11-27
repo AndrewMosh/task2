@@ -1,4 +1,4 @@
-const apiKey = "475fc60495e19e47387ee324";
+const apiKey = "";
 const baseCurrency = "RUB";
 
 const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${baseCurrency}`;
